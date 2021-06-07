@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "egT8gQmUiQEvyYYZC+Jgh4vNNIrAVn12IBK8n8YveClaJFZIdc8r53hru2Kb17iscmDr4deQ+lWnwGjpMKGUsQ==",
+  "dgSpecHash": "GgMvqlWVJmxA0t8rF2mv889fJ4MdTTBEpBmJYYA0/tSHi30/PyEUlGaUTNU5fUfbytxfOTWKuDQn7wyXab/BbQ==",
   "success": true,
   "projectFilePath": "D:\\TRAIN PROJECT\\SampleAPI\\TodoApi\\TodoApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\datluong\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\datluong\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\datluong\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\datluong\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\datluong\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

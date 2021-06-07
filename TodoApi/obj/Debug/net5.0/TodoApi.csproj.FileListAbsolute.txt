@@ -81,3 +81,5 @@ D:\TRAIN PROJECT\SampleAPI\TodoApi\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2
 D:\TRAIN PROJECT\SampleAPI\TodoApi\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\TRAIN PROJECT\SampleAPI\TodoApi\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\TRAIN PROJECT\SampleAPI\TodoApi\obj\Debug\net5.0\TodoApi.csproj.AssemblyReference.cache
+D:\TRAIN PROJECT\SampleAPI\TodoApi\bin\Debug\net5.0\AutoMapper.dll
+D:\TRAIN PROJECT\SampleAPI\TodoApi\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using TodoApi.Models;
+using TodoApi.Mapping;
 
 namespace TodoApi
 {
@@ -27,7 +28,7 @@ namespace TodoApi
                          options.UseSqlServer(connectstring);
             });
             services.AddControllers();
-
+            services.AddAutoMapper(typeof(MappingProfile));
 
         }
 

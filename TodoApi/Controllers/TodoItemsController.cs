@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,13 +16,11 @@ namespace TodoApi.Controllers
     public class TodoItemsController : ControllerBase
     {
         private readonly TodoContext _context;
-
-        public TodoItemsController(TodoContext context)
+        private readonly IMapper _mapper;
+        public TodoItemsController(TodoContext context,IMapper mapper)
         {
             _context = context;
-            context.TodoItems.ToList().ForEach((e)=> {
-                Console.WriteLine(e.Name);
-            });
+            _mapper = mapper;
         }
         #endregion
 
@@ -29,8 +28,13 @@ namespace TodoApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
         {
-           
-            return await _context.TodoItems.ToListAsync();
+            var models = await _context.TodoItems.ToListAsync();
+            
+            //test mapper
+            var modelsConvert = _mapper.Map<List<TodoItem>, List<TodoItemDTO>>(models);
+
+
+           return await _context.TodoItems.ToListAsync();
         }
 
         // GET: api/TodoItems/5
