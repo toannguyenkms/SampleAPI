@@ -19,6 +19,9 @@ namespace TodoApi.Controllers
         public TodoItemsController(TodoContext context)
         {
             _context = context;
+            context.TodoItems.ToList().ForEach((e)=> {
+                Console.WriteLine(e.Name);
+            });
         }
         #endregion
 
@@ -26,6 +29,7 @@ namespace TodoApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
         {
+           
             return await _context.TodoItems.ToListAsync();
         }
 
@@ -49,13 +53,23 @@ namespace TodoApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTodoItem(long id, TodoItem todoItem)
         {
+
             if (id != todoItem.Id)
             {
                 return BadRequest();
             }
-
-            _context.Entry(todoItem).State = EntityState.Modified;
-
+            var todoItemUpdated = await _context.TodoItems.FindAsync(id);
+            if (todoItemUpdated != null)
+            {
+                todoItemUpdated.ImageUrl = todoItem.ImageUrl;
+                todoItemUpdated.ManufacturerUrl = todoItem.ManufacturerUrl;
+                todoItemUpdated.Name = todoItem.Name;
+                todoItemUpdated.CategoryId = todoItem.CategoryId;
+                todoItemUpdated.Description = todoItem.Description;
+                todoItemUpdated.Price = todoItem.Price;
+                _context.TodoItems.Update(todoItemUpdated);
+            }
+            
             try
             {
                 await _context.SaveChangesAsync();
